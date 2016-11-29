@@ -2,7 +2,7 @@
 
 Lock on asynchronous code
 
-[![Build Status](https://travis-ci.org/rain1017/async-lock.svg?branch=master)](https://travis-ci.org/rain1017/async-lock)
+[![Build Status](https://travis-ci.org/rogierschouten/async-lock.svg?branch=master)](https://travis-ci.org/rogierschouten/async-lock)
 
 * ES6 promise supported
 * Multiple keys lock supported
