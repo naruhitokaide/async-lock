@@ -2,15 +2,19 @@
   "name": "async-lock",
   "description": "Lock on asynchronous code",
   "version": "0.3.6",
-  "author": "rain1017",
+  "author": {
+    "name": "Rogier Schouten",
+    "url": "https://github.com/rogierschouten/",
+    "email": "github@workingcode.ninja"
+  },
   "private": false,
-  "homepage": "https://github.com/rain1017/async-lock",
+  "homepage": "https://github.com/rogierschouten/async-lock",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rain1017/async-lock.git"
+    "url": "https://github.com/rogierschouten/async-lock.git"
   },
   "bugs": {
-    "url": "https://github.com/rain1017/async-lock/issues"
+    "url": "https://github.com/rogierschouten/async-lock/issues"
   },
   "keywords": [
     "lock",
