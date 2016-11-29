@@ -3,7 +3,6 @@
 Lock on asynchronous code
 
 [![Build Status](https://travis-ci.org/rain1017/async-lock.svg?branch=master)](https://travis-ci.org/rain1017/async-lock)
-[![Dependencies Status](https://david-dm.org/rain1017/async-lock.svg)](https://david-dm.org/rain1017/async-lock)
 
 * ES6 promise supported
 * Multiple keys lock supported
@@ -136,3 +135,11 @@ lock.isBusy();
 // Use your own promise
 var lock = new AsyncLock({Promise : require('bluebird')});
 ```
+
+## Changelog
+
+See [Changelog](./History.md)
+
+## License
+
+MIT, see [LICENSE](./LICENSE)
