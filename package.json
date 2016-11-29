@@ -16,6 +16,7 @@
   "bugs": {
     "url": "https://github.com/rogierschouten/async-lock/issues"
   },
+	"license": "MIT",
   "keywords": [
     "lock",
     "async",
