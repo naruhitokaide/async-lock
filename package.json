@@ -1,46 +1,47 @@
 {
-	"name": "async-lock",
-	"description": "Lock on asynchronous code",
-	"version": "0.3.6",
-	"author": "rain1017",
-	"private" : false,
-	"homepage" : "https://github.com/rain1017/async-lock",
-	"repository" : {
-		"type" : "git",
-		"url" : "https://github.com/rain1017/async-lock.git"
-	},
-	"bugs" : {
-		"url" : "https://github.com/rain1017/async-lock/issues"
-	},
-	"keywords" : [
-		"lock",
-		"async",
-		"concurrency",
-		"critical",
-		"section",
-		"mutex"
-	],
-	"engines": {
-	},
-	"scripts": {
-		"start": "grunt",
-		"test": "grunt test",
-		"postinstall": ""
-	},
-	"dependencies": {
-		"q": "~1.4.1"
-	},
-	"devDependencies": {
-		"bluebird": "~2.9.34",
-		"lodash": "~3.10.1",
-		"should": "~5.1.0",
-		"grunt-cli": "~0.1.13",
-		"grunt-env": "~0.4.2",
-		"grunt-contrib-watch": "~0.6.1",
-		"grunt-contrib-jshint": "~0.11.0",
-		"grunt-contrib-clean": "~0.6.0",
-		"grunt-mocha-test": "~0.12.6",
-		"load-grunt-tasks": "~3.1.0",
-		"blanket" : "~1.1.6"
-	}
+  "name": "async-lock",
+  "description": "Lock on asynchronous code",
+  "version": "0.3.6",
+  "author": "rain1017",
+  "private": false,
+  "homepage": "https://github.com/rain1017/async-lock",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rain1017/async-lock.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rain1017/async-lock/issues"
+  },
+  "keywords": [
+    "lock",
+    "async",
+    "concurrency",
+    "critical",
+    "section",
+    "mutex"
+  ],
+  "engines": {},
+  "scripts": {
+    "start": "grunt",
+    "test": "grunt test",
+    "postinstall": ""
+  },
+  "dependencies": {
+    "q": "~1.4.1"
+  },
+  "devDependencies": {
+    "blanket": "~1.1.6",
+    "bluebird": "~2.9.34",
+    "grunt": "^1.0.1",
+    "grunt-cli": "~0.1.13",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-jshint": "~0.11.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-env": "~0.4.2",
+    "grunt-mocha-test": "~0.12.6",
+    "load-grunt-tasks": "~3.1.0",
+    "lodash": "~3.10.1",
+    "mocha": "^3.2.0",
+    "should": "~5.1.0"
+  }
 }
