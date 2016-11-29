@@ -37,23 +37,9 @@ module.exports = function(grunt) {
 				src: watchFiles.testJS,
 				options : {
 					reporter: 'spec',
-					timeout: 5000,
-					require: 'test/blanket'
+					timeout: 5000
 				}
 			},
-			coverage: {
-				src: watchFiles.testJS,
-				options : {
-					reporter: 'html-cov',
-					quiet: true,
-					captureFile: 'coverage.html'
-				}
-			}
-		},
-		clean: {
-			'coverage.html' : {
-				src: ['coverage.html']
-			}
 		}
 	});
 
@@ -67,7 +53,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('lint', ['jshint']);
 
 	// Test task.
-	grunt.registerTask('test', ['clean', 'lint', 'env:test', 'mochaTest']);
+	grunt.registerTask('test', ['lint', 'env:test', 'mochaTest']);
 
 	// Default task(s).
 	grunt.registerTask('default', ['test']);
