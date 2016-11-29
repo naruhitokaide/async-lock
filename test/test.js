@@ -256,4 +256,24 @@ describe('AsyncLock Tests', function () {
 			done();
 		}
 	});
+
+	it('bug #2 on https://github.com/rain1017/async-lock/issues/2', function (done) {
+		var lock = new AsyncLock({});
+
+		// this case gave a TypeError
+		function work(cb) {
+			return setTimeout(cb, 10);
+		}
+
+		var doneCount = 0;
+		function cb() {
+			doneCount++;
+			if (doneCount === 2) {
+				done();
+			}
+		}
+
+		lock.acquire(['A', 'B', 'C'], work, cb);
+		lock.acquire(['A', 'B', 'C'], work, cb);
+	});
 });
