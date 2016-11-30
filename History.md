@@ -1,10 +1,14 @@
-0.3.7 / 2016-11-29
+0.3.9 / 2016-11-30
 ==================
 * Referred to MIT license in package.json
 * Update NPM module dependencies, remove no-longer-maintained blanket code coverage
 * Change author to rogierschouten
 * Fix invalid JSDoc comments (thanks @JonathanPicques)
 * Bugfix: TypeError when locking multiple keys at once
+
+0.3.7-0.3.8
+==================
+Unknown, previous author did not commit this to Github.
 
 0.3.6 / 2015-09-07
 ==================
