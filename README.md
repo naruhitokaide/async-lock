@@ -140,6 +140,10 @@ var lock = new AsyncLock({Promise : require('bluebird')});
 
 See [Changelog](./History.md)
 
+## Issues
+
+See [isse tracker](https://github.com/rogierschouten/async-lock/issues).
+
 ## License
 
 MIT, see [LICENSE](./LICENSE)
