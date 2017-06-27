@@ -1,3 +1,7 @@
+0.3.10 / 2017-06-27
+==================
+* Remove dependencies on Q-specific nodify(), try(), and defer() methods so that you can inject e.g. standard ES6 promises using `new AsyncLock({ Promise: Promise })`
+
 0.3.9 / 2016-11-30
 ==================
 * Referred to MIT license in package.json

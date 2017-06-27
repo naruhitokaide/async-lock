@@ -138,7 +138,7 @@ describe('AsyncLock Tests', function () {
 			});
 	});
 
-	it('Promise mode', function (done) {
+	it('Promise mode (Q)', function (done) {
 		var lock = new AsyncLock();
 		var value = 0;
 		var concurrency = 8;
@@ -245,6 +245,12 @@ describe('AsyncLock Tests', function () {
 		var lock = new AsyncLock({ Promise: require('bluebird') });
 		lock.acquire('key', function () { })
 			.nodeify(done);
+	});
+
+	it('use ES6 promise', function (done) {
+		var lock = new AsyncLock({ Promise: Promise });
+		lock.acquire('key', function () { })
+			.then(done, done);
 	});
 
 	it('invalid parameter', function (done) {
