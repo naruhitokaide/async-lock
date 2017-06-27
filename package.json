@@ -1,7 +1,7 @@
 {
   "name": "async-lock",
   "description": "Lock on asynchronous code",
-  "version": "0.3.9",
+  "version": "0.3.10",
   "author": {
     "name": "Rogier Schouten",
     "url": "https://github.com/rogierschouten/",
@@ -32,13 +32,13 @@
     "postinstall": ""
   },
   "dependencies": {
-    "q": "~1.4.1"
+    "q": "~1.5.0"
   },
   "devDependencies": {
-    "bluebird": "~3.4.6",
+    "bluebird": "~3.5.0",
     "grunt": "^1.0.1",
     "grunt-cli": "~1.2.0",
-    "grunt-contrib-clean": "~1.0.0",
+    "grunt-contrib-clean": "~1.1.0",
     "grunt-contrib-jshint": "~1.1.0",
     "grunt-contrib-watch": "~1.0.0",
     "grunt-env": "~0.4.4",
@@ -46,6 +46,6 @@
     "load-grunt-tasks": "~3.5.2",
     "lodash": "~4.17.2",
     "mocha": "^3.2.0",
-    "should": "~11.1.1"
+    "should": "~11.2.1"
   }
 }
