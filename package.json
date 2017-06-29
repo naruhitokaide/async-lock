@@ -31,9 +31,6 @@
     "test": "grunt test",
     "postinstall": ""
   },
-  "dependencies": {
-    "q": "~1.5.0"
-  },
   "devDependencies": {
     "bluebird": "~3.5.0",
     "grunt": "^1.0.1",
@@ -46,6 +43,7 @@
     "load-grunt-tasks": "~3.5.2",
     "lodash": "~4.17.2",
     "mocha": "^3.2.0",
+    "q": "~1.5.0",
     "should": "~11.2.1"
   }
 }
