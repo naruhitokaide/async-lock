@@ -253,6 +253,12 @@ describe('AsyncLock Tests', function () {
 			.then(done, done);
 	});
 
+	it('uses global Promise by default', function (done) {
+		var lock = new AsyncLock({ });
+		lock.acquire('key', function () { })
+			.then(done, done);
+	});
+
 	it('invalid parameter', function (done) {
 		var lock = new AsyncLock();
 		try {
