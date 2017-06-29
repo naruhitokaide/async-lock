@@ -1,3 +1,8 @@
+1.0.0 / 2017-06-29
+==================
+* Remove dependency on Q by using the global Promise variable by default. Thank you @erikvold (https://github.com/erikvold) for the PR
+
+
 0.3.10 / 2017-06-27
 ==================
 * Remove dependencies on Q-specific nodify(), try(), and defer() methods so that you can inject e.g. standard ES6 promises using `new AsyncLock({ Promise: Promise })`

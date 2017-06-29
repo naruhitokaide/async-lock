@@ -132,9 +132,9 @@ lock.acquire(key, fn, function(err, ret){
 // Whether there is any running or pending async function
 lock.isBusy();
 
-// Use your own promise library instead of Q
+// Use your own promise library instead of the global Promise variable
 var lock = new AsyncLock({Promise : require('bluebird')}); // Bluebird
-var lock = new AsyncLock({Promise : Promise}); // Node/ES6 promise
+var lock = new AsyncLock({Promise : require('q')}); // Q
 ```
 
 ## Changelog
