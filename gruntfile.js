@@ -37,7 +37,8 @@ module.exports = function(grunt) {
 				src: watchFiles.testJS,
 				options : {
 					reporter: 'spec',
-					timeout: 5000
+					timeout: 5000,
+					noFail: false
 				}
 			},
 		}
@@ -45,9 +46,6 @@ module.exports = function(grunt) {
 
 	// Load NPM tasks
 	require('load-grunt-tasks')(grunt);
-
-	// Making grunt default to force in order not to break the project.
-	grunt.option('force', true);
 
 	// Lint task(s).
 	grunt.registerTask('lint', ['jshint']);
