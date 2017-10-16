@@ -288,4 +288,33 @@ describe('AsyncLock Tests', function () {
 		lock.acquire(['A', 'B', 'C'], work, cb);
 		lock.acquire(['A', 'B', 'C'], work, cb);
 	});
+
+
+	it('Allow queue skipping', function (done) {
+		var lock = new AsyncLock();
+		var completeTasks = [];
+		function onDone () {
+			if (completeTasks.length !== 3) return;
+			assert.deepEqual(completeTasks, [1, 3, 2], 'Expected third task to skip queue');
+			done();
+		}
+		lock.acquire('key', function (lockDone) {
+			setTimeout(function () {
+				completeTasks.push(1);
+				lockDone();
+			}, 20);
+		}, onDone);
+		lock.acquire('key', function (lockDone) {
+			setTimeout(function () {
+				completeTasks.push(2);
+				lockDone();
+			}, 20);
+		}, onDone);
+		lock.acquire('key', function (lockDone) {
+			setTimeout(function () {
+				completeTasks.push(3);
+				lockDone();
+			}, 20);
+		}, onDone, { skipQueue: true });
+	});
 });
