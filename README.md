@@ -135,6 +135,11 @@ lock.isBusy();
 // Use your own promise library instead of the global Promise variable
 var lock = new AsyncLock({Promise : require('bluebird')}); // Bluebird
 var lock = new AsyncLock({Promise : require('q')}); // Q
+
+// Add a task to the front of the queue waiting for a given lock
+lock.acquire(key, fn1, cb); // runs immediately
+lock.acquire(key, fn2, cb); // added to queue
+lock.acquire(key, priorityFn, cb, {skipQueue: true}); // jumps queue and runs before fn2
 ```
 
 ## Changelog
