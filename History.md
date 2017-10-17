@@ -1,7 +1,10 @@
+1.1.0 / 2017-10-17
+==================
+* Add option to add waiters to the front of the queue
+
 1.0.0 / 2017-06-29
 ==================
 * Remove dependency on Q by using the global Promise variable by default. Thank you @erikvold (https://github.com/erikvold) for the PR
-
 
 0.3.10 / 2017-06-27
 ==================
