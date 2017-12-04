@@ -11,9 +11,17 @@ Lock on asynchronous code
 * Domain reentrant supported
 * 100% code coverage
 
-## Why you need locking on single threaded nodejs?
+## Disclaimer
 
-Nodejs is single threaded, and the code execution is never get interrupted inside an event loop, so locking is unnecessary? This is true ONLY IF your critical section can be executed inside a single event loop.
+I did not create this package, and I will not add any features to it myself. I was granted the ownership because it was no longer being
+maintained, and I volunteered to fix a bug.
+
+If you have a new feature you would like to have incorporated, please send me a PR and I will be happy to work with you and get it merged.
+For any bugs, PRs are most welcome but when possible I will try to get them resolved as soon as possible.
+
+## Why do you need locking on single threaded nodejs?
+
+Nodejs is single threaded, and the code execution never gets interrupted inside an event loop, so locking is unnecessary? This is true ONLY IF your critical section can be executed inside a single event loop.
 However, if you have any async code inside your critical section (it can be simply triggered by any I/O operation, or timer), your critical logic will across multiple event loops, therefore it's not concurrency safe!
 
 Consider the following code
