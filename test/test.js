@@ -317,4 +317,25 @@ describe('AsyncLock Tests', function () {
 			}, 20);
 		}, onDone, { skipQueue: true });
 	});
+
+
+	it('Promise Mode: should call worker even when no keys are locked', done => {
+		var lock = new AsyncLock();
+		lock.acquire([], () => {
+			done();
+			return Promise.resolve(true);
+		});
+	});
+
+	it('Promise Mode: should pass worker\'s result', () => {
+		var lock = new AsyncLock();
+		return lock.acquire(['key'], () => Promise.resolve('result'))
+			.then(status => assert.equal(status, 'result'));
+	});
+
+	it('Promise Mode: should pass worker\'s result even when no keys are locked', () =>{
+		var lock = new AsyncLock();
+		return lock.acquire([], () => Promise.resolve('result'))
+			.then(status => assert.equal(status, 'result'));
+	}).timeout(20);
 });
