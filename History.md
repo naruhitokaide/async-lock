@@ -1,3 +1,7 @@
+1.1.1 / 2018-02-14
+==================
+* Fix result Promise not resolving when locking empty key array
+
 1.1.0 / 2017-10-17
 ==================
 * Add option to add waiters to the front of the queue
