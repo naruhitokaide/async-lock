@@ -319,23 +319,29 @@ describe('AsyncLock Tests', function () {
 	});
 
 
-	it('Promise Mode: should call worker even when no keys are locked', done => {
+	it('Promise Mode: should call worker even when no keys are locked', function (done) {
 		var lock = new AsyncLock();
-		lock.acquire([], () => {
+		lock.acquire([], function () {
 			done();
-			return Promise.resolve(true);
+			return new Q(true);
 		});
 	});
 
-	it('Promise Mode: should pass worker\'s result', () => {
+	it('Promise Mode: should pass worker\'s result', function() {
 		var lock = new AsyncLock();
-		return lock.acquire(['key'], () => Promise.resolve('result'))
-			.then(status => assert.equal(status, 'result'));
+		return lock.acquire(['key'], function () {
+			return new Q('result');
+		}).then(function (status) {
+			assert.equal(status, 'result');
+		});
 	});
 
-	it('Promise Mode: should pass worker\'s result even when no keys are locked', () =>{
+	it('Promise Mode: should pass worker\'s result even when no keys are locked', function () {
 		var lock = new AsyncLock();
-		return lock.acquire([], () => Promise.resolve('result'))
-			.then(status => assert.equal(status, 'result'));
+		return lock.acquire([], function cb () {
+			return new Q('result');
+		}).then(function (status) {
+			assert.equal(status, 'result');
+		});
 	}).timeout(20);
 });
