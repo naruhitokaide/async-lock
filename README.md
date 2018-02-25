@@ -26,7 +26,7 @@ However, if you have any async code inside your critical section (it can be simp
 
 Consider the following code
 ```js
-redis.get('key', function(err, value){
+redis.get('key', function(err, value) {
 	redis.set('key', value * 2);
 });
 ```
@@ -43,18 +43,18 @@ Obviously it's not what you expected
 
 With asyncLock, you can easily write your async critical section
 ```js
-lock.acquire('key', function(cb){
+lock.acquire('key', function(cb) {
 	// Concurrency safe
-	redis.get('key', function(err, value){
+	redis.get('key', function(err, value) {
 		redis.set('key', value * 2, cb);
 	});
-}, function(err, ret){
+}, function(err, ret) {
 });
 ```
 
 ## Get Started
 
-```
+```js
 var AsyncLock = require('async-lock');
 var lock = new AsyncLock();
 
@@ -64,42 +64,42 @@ var lock = new AsyncLock();
  * @param {function} cb 	(optional) callback function, otherwise will return a promise
  * @param {Object} opts 	(optional) options
  */
-lock.acquire(key, function(done){
+lock.acquire(key, function(done) {
 	// async work
 	done(err, ret);
-}, function(err, ret){
+}, function(err, ret) {
 	// lock released
 }, opts);
 
 // Promise mode
-lock.acquire(key, function(){
+lock.acquire(key, function() {
 	// return value or promise
-}, opts).then(function(){
+}, opts).then(function() {
 	// lock released
 });
 ```
 
 ## Error Handling
 
-```
+```js
 // Callback mode
-lock.acquire(key, function(done){
+lock.acquire(key, function(done) {
 	done(new Error('error'));
-}, function(err, ret){
+}, function(err, ret) {
 	console.log(err.message) // output: error
 });
 
 // Promise mode
-lock.acquire(key, function(){
+lock.acquire(key, function() {
 	throw new Error('error');
-}).catch(function(err){
+}).catch(function(err) {
 	console.log(err.message) // output: error
 });
 ```
 
 ## Acquire multiple keys
 
-```
+```js
 lock.acquire([key1, key2], fn, cb);
 ```
 
@@ -107,15 +107,15 @@ lock.acquire([key1, key2], fn, cb);
 
 Lock is reentrant in the same domain
 
-```
+```js
 var domain = require('domain');
 var lock = new AsyncLock({domainReentrant : true});
 
 var d = domain.create();
-d.run(function(){
-	lock.acquire('key', function(){
+d.run(function() {
+	lock.acquire('key', function() {
 		//Enter lock
-		return lock.acquire('key', function(){
+		return lock.acquire('key', function() {
 			//Enter same lock twice
 		});
 	});
@@ -124,16 +124,16 @@ d.run(function(){
 
 ## Options
 
-```
+```js
 // Specify timeout
-var lock = new AsyncLock({timeout : 5000});
-lock.acquire(key, fn, function(err, ret){
+var lock = new AsyncLock({timeout: 5000});
+lock.acquire(key, fn, function(err, ret) {
 	// timed out error will be returned here if lock not acquired in given time
 });
 
 // Set max pending tasks
-var lock = new AsyncLock({maxPending : 1000});
-lock.acquire(key, fn, function(err, ret){
+var lock = new AsyncLock({maxPending: 1000});
+lock.acquire(key, fn, function(err, ret) {
 	// Handle too much pending error
 })
 
@@ -141,8 +141,8 @@ lock.acquire(key, fn, function(err, ret){
 lock.isBusy();
 
 // Use your own promise library instead of the global Promise variable
-var lock = new AsyncLock({Promise : require('bluebird')}); // Bluebird
-var lock = new AsyncLock({Promise : require('q')}); // Q
+var lock = new AsyncLock({Promise: require('bluebird')}); // Bluebird
+var lock = new AsyncLock({Promise: require('q')}); // Q
 
 // Add a task to the front of the queue waiting for a given lock
 lock.acquire(key, fn1, cb); // runs immediately
