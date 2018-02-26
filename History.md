@@ -1,3 +1,7 @@
+1.1.2 / 2018-02-28
+==================
+* README.md improvements
+
 1.1.1 / 2018-02-14
 ==================
 * Fix result Promise not resolving when locking empty key array
