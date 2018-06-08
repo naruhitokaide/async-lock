@@ -1,3 +1,8 @@
+1.1.3 / 2018-06-08
+==================
+* Fix for #14 tarball has wrong permissions
+* Updates to dev dependencies
+
 1.1.2 / 2018-02-28
 ==================
 * README.md improvements
