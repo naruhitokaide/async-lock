@@ -156,7 +156,7 @@ See [Changelog](./History.md)
 
 ## Issues
 
-See [isse tracker](https://github.com/rogierschouten/async-lock/issues).
+See [issue tracker](https://github.com/rogierschouten/async-lock/issues).
 
 ## License
 
