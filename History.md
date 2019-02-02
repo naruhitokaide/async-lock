@@ -1,3 +1,8 @@
+1.1.4 / 2019-02-02
+==================
+* Fix for #17 Promise.defer() resulting in console warnings
+* Fix for npm audit vulnerabilities (one remaining in dev deps)
+
 1.1.3 / 2018-06-08
 ==================
 * Fix for #14 tarball has wrong permissions
