@@ -1,20 +1,22 @@
-1.1.4 / 2019-02-02
+1.2.0
 ==================
-* Fix for #17 Promise.defer() resulting in console warnings
-* Fix for npm audit vulnerabilities (one remaining in dev deps)
+* ES5 compatibility (#21)
 
-1.1.3 / 2018-06-08
+1.1.4
 ==================
-* Fix for #14 tarball has wrong permissions
-* Updates to dev dependencies
+* Fix for #17, update dependencies
 
-1.1.2 / 2018-02-28
+1.1.3
 ==================
-* README.md improvements
+* Fix for #14
 
-1.1.1 / 2018-02-14
+1.1.1
 ==================
 * Fix result Promise not resolving when locking empty key array
+
+1.1.0 / 2017-10-17
+==================
+* Add option to add waiters to the front of the queue
 
 1.1.0 / 2017-10-17
 ==================
