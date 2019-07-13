@@ -28,8 +28,7 @@
   "engines": {},
   "scripts": {
     "start": "grunt",
-    "test": "grunt test",
-    "postinstall": ""
+    "test": "grunt test"
   },
   "devDependencies": {
     "bluebird": "^3.5.1",
