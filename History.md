@@ -1,3 +1,9 @@
+
+1.2.1
+==================
+* Remove empty postinstall script (#24)
+* Fixed some vulnerable dev dependencies
+
 1.2.0
 ==================
 * ES5 compatibility (#21)
