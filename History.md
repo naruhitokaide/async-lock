@@ -1,4 +1,8 @@
 
+1.2.2
+==================
+* Fix grunt-env accidentally having become a dependency (#25)
+
 1.2.1
 ==================
 * Remove empty postinstall script (#24)
